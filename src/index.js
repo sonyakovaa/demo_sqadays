@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom'
+import './index.css'
+import registerServiceWorker from './reportWebVitals'
+import React, { Fragment } from 'react'
+import Button from './App'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+ReactDOM.render((
+  <Fragment>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <h2><span>1. Text and onClick function:</span></h2>
+    <Button onClick={() => { console.log('SQA Days!') }}>Button text</Button>
+
+    <h2><span>2. Disabled button:</span></h2>
+    <Button onClick={() => { console.log('SQA Days!') }} disabled />
+
+    <h2><span>3. Active button:</span></h2>
+    <Button active />
+
+  </Fragment>
+), document.getElementById('root'));
+registerServiceWorker()
